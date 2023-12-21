@@ -53,7 +53,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  1       │  2       │  3       │          │   │    +     │          │          │          │   DEL    │
-           &ht LA(TAB)  &kp N1     &kp N2     &kp N3     &trans       &kp C_VOL_UP  &kp C_MUTE   &trans    &trans   &kp DEL
+           &kp TAB     &kp N1     &kp N2     &kp N3     &trans       &kp C_VOL_UP  &kp C_MUTE   &trans    &trans   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │          │   │    -     │     L    │    UP    │    DOWN  │    R     │
             &trans     &kp N4     &kp N5     &kp N6     &trans      &kp C_VOL_DN   &kp LARW   &kp UARW  &kp DARW  &kp RARW 
