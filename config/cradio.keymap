@@ -6,19 +6,18 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 / {
     behaviors {
         ht: hold_tap {
-            label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -54,7 +53,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  1       │  2       │  3       │          │   │    +     │          │          │          │   DEL    │
-           &ht LA(TAB)  &kp N1     &kp N2     &kp N3     &trans       &kp C_VOL_UP  &kp C_MUTE   &trans    &trans   &kp DEL
+           &kp TAB     &kp N1     &kp N2     &kp N3     &kp LALT       &kp C_VOL_UP  &kp C_MUTE   &trans    &trans   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │          │   │    -     │     L    │    UP    │    DOWN  │    R     │
             &trans     &kp N4     &kp N5     &kp N6     &trans      &kp C_VOL_DN   &kp LARW   &kp UARW  &kp DARW  &kp RARW 
@@ -102,3 +101,4 @@
         };
     };
 };
+f
