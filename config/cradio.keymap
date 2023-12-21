@@ -76,7 +76,7 @@
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp GRAVE    &kp BSLH   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│    &     │    '     │    "     │     :    │   ;      │   │    =     │  _       │  +       │  │       │          │
-            &kp AMPS   &tkp APOS  &kp SQT   &kp COLON   &kp SEMI       &kp EQUAL   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+            &kp AMPS   &tkp APOS  &kp DQT   &kp COLON   &kp SEMI       &kp EQUAL   &kp UNDER  &kp PLUS   &kp PIPE   &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
