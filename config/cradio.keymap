@@ -7,7 +7,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3  &ht RSHFT k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 / {
     behaviors {
@@ -22,33 +22,32 @@
         };
     };
 
-     conditional_layers {
+    conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
         };
-     };
+    };
 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │ SEMI     │
-            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &ht TAB Q   &kp W      &kp E      &kp R     &kp T           &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  R       │  T       │  D       │   │  M       │  N       │  E       │  I       │  O       │
-           &kp A      HRML(S,      R,         T)        &kp D          &kp M     HRMR(N,      E,         I          O)
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ BSPC     │
+            HRML(A,        S,        D,         F)       &kp G           &kp H     HRMR(J,      K,        L,       BSPC)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
-            &ht LC(C) Z &ht LC(V) X &kp C      &kp V    &ht LC(S) B    &kp K      &kp H     &kp COMMA   &kp DOT   &kp FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
+            &ht LC(C) Z &ht LC(V) X &kp C      &kp V    &ht LC(S) B     &kp N      &kp M    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &ht ESC ENTER  &kp SPACE  &mo 1      &mo 2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
-//// &ht TAB Q
 
         right_layer {
             bindings = <
