@@ -38,8 +38,8 @@
         //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
             &ht TAB Q   &kp W      &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ BSPC     │
-            &kp A     &mt LALT S &mt LCTRL D &mt LGUI F  &kp G         &kp H     HRMR(J,      K,        L,       BSPC)
+        //│  A       │  R       │  S       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
+            &kp A     &mt LALT R &mt LCTRL S &mt LGUI T  &kp D         &kp M     &mt LGUI N &mt LCTRL E &mt LALT I &mt RSHFT O 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &ht LC(C) Z &ht LC(V) X &kp C      &kp V    &ht LC(S) B     &kp N      &kp M    &kp COMMA   &kp DOT   &kp FSLH
