@@ -5,10 +5,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-// Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
-
 / {
     behaviors {
         ht: hold_tap {
@@ -41,10 +37,10 @@
         //│  A       │  R       │  S       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
             &kp A     &mt LALT R &mt LCTRL S &mt LGUI T  &kp D         &kp M     &mt LGUI N &mt LCTRL E &mt LALT I &mt RSHFT O 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &ht LC(C) Z &ht LC(V) X &kp C      &kp V    &ht LC(S) B     &kp N      &kp M    &kp COMMA   &kp DOT   &kp FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
+          &mt LSHFT Z  &kp X      &kp C      &kp V      &kp B          &kp K      &kp H    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &ht ESC ENTER  &kp SPACE  &mo 1      &mo 2
+                                          &ht ESC ENTER &kp SPACE   &kp BSPC &mo 2 &kp BSPC &mo 2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
