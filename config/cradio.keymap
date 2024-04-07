@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -24,7 +25,7 @@
             bindings = <
 // 0
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
+        //│  Q  ESC  │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
            &ht ESC Q   &kp W      &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
@@ -61,8 +62,8 @@
             bindings = <
 // 2
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ~       │  [       │  {       │  }       │     ]    │   │  ^       │  (       │  )       │          │  ESC     │
-        //    &kp TILDE   &kp LBKT   &kp LBRC   &kp RBRC   &kp RBKT      &kp CARET  &kp LPAR   &kp RPAR   &trans      &kp ESC
+        //│  ~       │  [       │  {       │  }       │     ]    │   │  ^       │  (       │  )       │          │          │
+        //    &kp TILDE   &kp LBKT   &kp LBRC   &kp RBRC   &kp RBKT      &kp CARET  &kp LPAR   &kp RPAR   &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │    `     │  \       │          │
         //    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp GRAVE    &kp BSLH   &trans
@@ -74,14 +75,14 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         //    >;
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  CAPS    │   +      │  MUTE    │          │          │   │  DOWN    │ RARW     │          │          │          │
-            &kp CAPS &kp C_VOL_UP &kp C_MUTE &kp PG_UP  &kp END      &kp DARW  &kp RARW     &trans     &trans    &trans
+        //│  CAPS    │   +      │          │          │          │   │  DOWN    │ RARW     │          │          │          │
+            &kp CAPS &kp C_VOL_UP &kp MB1    &kp PG_UP  &kp END      &kp DARW  &kp RARW     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │   -      │          │          │          │   │          │          │          │          │          │
-            &trans   &kp C_VOL_DN  &trans    &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
+           &kp LC(Z) &kp C_VOL_DN &kp MB2   &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  UP      │ LARW     │          │          │          │
-             &trans     &trans   &kp LC(C)  &kp LC(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
+             &trans   &kp C_MUTE  &kp LC(C)  &kp LC(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
