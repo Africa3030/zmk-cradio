@@ -103,7 +103,7 @@
            &kp TILDE   &kp EXCL   &kp AT     &kp HASH   &kp DLLR      &kp PRCNT  &kp CARET   &kp AMPS  &kp ASTRK     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  │       │  _       │  +       │  :       │  ?       │
-            &trans     &trans     &trans     &kb LT    &kb GT         &kp PIPE   &kp UNDER   &kp PLUS  &kp COLON  &kp QMARK
+            &trans     &trans     &trans  &kb LESS_THAN &kb GREATER_THAN &kp PIPE &kp UNDER  &kp PLUS  &kp COLON  &kp QMARK
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans
