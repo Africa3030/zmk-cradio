@@ -25,7 +25,7 @@
 // 0
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
-            &ht TAB Q   &kp W      &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+           &ht ESC Q   &kp W      &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
             &kp A     &mt LALT R &mt LCTRL S &mt LGUI T  &kp D         &kp M     &mt LGUI N &mt LCTRL E &mt LALT I &mt RSHFT O 
@@ -33,7 +33,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
           &mt LSHFT Z  &kp X      &kp C      &kp V      &kp B          &kp K      &kp H    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &ht ESC ENTER &lt 3 SPACE     &lt 1 ENTER &lt 2 BSPC 
+                                           &lt 1 TAB  &lt 2 SPACE    &lt 3 ENTER &lt 4 BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -41,14 +41,6 @@
         right_layer {
             bindings = <
 // 1
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮  
-        //│    +     │          │          │          │   **     │
-        // &kp C_VOL_UP  &kp C_MUTE   &trans    &trans   &kp DEL
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│    -     │    **    │    **    │    **    │   **     │
-        //  &kp C_VOL_DN   &kp LARW   &kp UARW  &kp DARW  &kp RARW 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤
-
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │  7       │  8       │  9       │          │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &trans     &kp N7     &kp N8     &kp N9    &kp C_BRI_UP
@@ -89,7 +81,7 @@
             &trans   &kp C_VOL_DN  &trans    &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  UP      │ LARW     │          │          │          │
-             &trans     &trans     &trans     &trans     &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
+             &trans     &trans   &kp LC(C)  &kp LC(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
