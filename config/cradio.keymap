@@ -26,7 +26,7 @@
 // 0
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Q        │  W ESC   │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
-           &kp Q     &ht ESC W      &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+    &mt LC(LS(LALT)) Q &ht ESC W  &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
             &kp A     &mt LALT R &mt LCTRL S &mt LGUI T  &kp D         &kp M     &mt LGUI N &mt LCTRL E &mt LALT I &mt RSHFT O 
