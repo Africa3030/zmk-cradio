@@ -69,7 +69,7 @@
            &kp LC(Z) &kp C_VOL_DN &kp MB2   &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  UP      │ LARW     │          │          │          │
-             &trans   &kp C_MUTE  &kp LC(C)  &kp LC(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
+             &trans   &kp C_MUTE  &kp LG(C)  &kp LG(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
