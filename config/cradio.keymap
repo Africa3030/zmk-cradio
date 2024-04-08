@@ -66,7 +66,7 @@
             &kp CAPS &kp C_VOL_UP &kp MB1    &kp PG_UP  &kp END      &kp DARW  &kp RARW     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │   -      │          │          │          │   │          │          │          │          │          │
-           &kp LC(Z) &kp C_VOL_DN &kp MB2   &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
+           &kp LG(Z) &kp C_VOL_DN &kp MB2   &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  UP      │ LARW     │          │          │          │
            &kp C_MUTE &kp LG(X)  &kp LG(C)  &kp LG(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
