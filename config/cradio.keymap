@@ -8,15 +8,55 @@
 
 / {
     behaviors {
-        ht: hold_tap {
+        hm: homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
+            tapping-term-ms = <175>; // triggers the hold behavior when the tapping-term-ms has expired
+            quick-tap-ms = <150>; // If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
+            require-prior-idle-ms = <185>; // like quick-tap-ms however it will apply for any non-modifier key pressed before it
+            bindings = <&kp>, <&kp>;  // hold, tap
         };
+    
+        td_rp: td_right_paren {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp RIGHT_PARENTHESIS>;
+        };
+
+        
+        td_vt: td_v_tab {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp TAB>;
+        };
+
+        td_rbc: td_right_brace {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp B>, <&kp RIGHT_BRACE>;
+        };
+
+        
+        td_rbck: td_right_bracket {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp M>, <&kp RIGHT_BRACKET>;
+        };
+
+                      
+        td_rgt: td_right_greater_than {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp GREATER_THAN>;
+        };
+
+        td_cursor: td_scroll_or_cursor {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&mkp RCLK>; // hold, tap, double_tap
+        };
+
     };
 
     keymap {
@@ -26,15 +66,15 @@
 // 0
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ Q        │  W ESC   │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ;:      │
-    &mt LC(LS(LALT)) Q &ht ESC W  &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+    &mt LC(LS(LALT)) Q &hm ESC W  &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  R       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
-            &kp A     &mt LALT S &mt LCTRL R &mt LGUI T  &kp D         &kp M     &mt LGUI N &mt LCTRL E &mt LALT I &mt RSHFT O 
+            &kp A     &hm LALT S &hm LCTRL R &hm LGUI T  &td_rp        &td_rbck  &hm LGUI N &hm LCTRL E &hm LALT I &hm RSHFT O 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
-          &mt LSHFT Z  &kp X      &kp C      &kp V      &kp B          &kp K      &kp H    &kp COMMA   &kp DOT   &kp FSLH
+          &mt LSHFT Z  &kp X      &kp C      &td_vt     &td_rbc        &td_rgt    &kp H    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt 1 TAB  &lt 2 SPACE    &lt 3 ENTER &lt 4 BSPC 
+                                            &td_cursor &lt 1 SPACE    &lt 2 ENTER &lt 3 BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -43,16 +83,16 @@
             bindings = <
 // 1
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │  7       │  8       │  9       │          │
-            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &trans     &kp N7     &kp N8     &kp N9    &kp C_BRI_UP
+        //│   CAPS   │   +      │          │          │          │   │          │  7       │  8       │  9       │          │
+            &kp CAPS &kp C_VOL_UP  &none      &none   &kp C_BRI_UP    &kp SLASH  &hm F7 N7  &hm F8 N8  &hm F9 N9  &hm F10 MINUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │  4       │  5       │  6       │          │
-            &kp F6     &kp F7     &kp F8     &kp F9     &kp F10        &trans     &kp N4     &kp N5     &kp N6    &kp C_BRI_DN
+        //│          │   -      │          │          │          │   │          │  4       │  5       │  6       │          │
+          &kp LG(Z)  &kp C_VOL_DN  &none &kp BACKSPACE &kp C_BRI_DN   &kp ASTRK  &hm F4 N4  &hm F5 N5  &hm F6 N6  &hm F11 PLUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  0       │  1       │  2       │  3       │          │
-            &trans     &trans      &trans    &kp F11    &kp F12        &kp N0     &kp N1     &kp N2     &kp N3     &trans
+           &kp C_MUTE &kp LG(X)  &kp LG(C)  &kp LG(V)   &kp TAB       &kp N0     &hm F1 N1  &hm F2 N2  &hm F3 N3  &hm F12 EQUAL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans        &kp DOT    &kp COMMA
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
 
@@ -62,14 +102,14 @@
             bindings = <
 // 2
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  CAPS    │   +      │          │          │          │   │  DOWN    │ RARW     │          │          │          │
-            &kp CAPS &kp C_VOL_UP &kp MB1    &kp PG_UP  &kp END      &kp DARW  &kp RARW     &trans     &trans    &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans      &trans     &trans        &trans     &trans     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │   -      │          │          │          │   │          │          │          │          │          │
-           &kp LG(Z) &kp C_VOL_DN &kp MB2   &kp PG_DN  &kp HOME       &trans     &trans     &trans     &trans     &trans
+        //│          │          │          │          │          │   │  DOWN    │ RARW     │          │          │          │
+            &trans     &trans     &trans      &trans     &trans       &kp DARW   &kp RARW    &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  UP      │ LARW     │          │          │          │
-           &kp C_MUTE &kp LG(X)  &kp LG(C)  &kp LG(V)   &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
+            &trans     &trans     &trans      &trans     &trans       &kp UARW   &kp LARW     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -80,14 +120,14 @@
             bindings = <
 // 3
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  `       │    '     │    "     │  (       │  )       │   │          │          │          │          │          │
-           &kp GRAVE   &kp APOS   &kp DQT    &kp LPAR   &kp RPAR        &trans     &trans     &trans     &trans    &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans     &trans    &trans     &trans        &trans     &trans       &trans     &trans    &trans  
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  [       │  ]       │   │  \       │   -      │   =      │          │          │
-            &trans     &trans     &trans     &kp LBKT   &kp RBKT       &kp BSLH  &kp MINUS  &kp EQUAL     &trans     &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+           &trans     &trans     &trans    &trans     &trans        &trans     &trans       &trans     &trans    &trans   
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │  {       │  }       │   │          │          │          │          │          │
-            &trans     &trans     &trans     &kp LBRC   &kp RBRC       &trans     &trans     &trans     &trans     &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+             &trans     &trans     &trans    &trans     &trans        &trans     &trans       &trans     &trans    &trans  
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
