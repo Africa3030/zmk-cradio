@@ -104,10 +104,10 @@
     &mt LC(LS(LALT)) Q &hm ESC W  &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  R       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
-            &kp A     &hm LALT S &hm LCTRL R &hm LGUI T &hm LPAR D   &hm LBKT M  &hm LGUI N &hm LCTRL E &hm LALT I &hm RSHFT O 
+            &kp A     &hm LALT S &hm LCTRL R &hm LGUI T &hm LPAR D   &hm LBKT M  &hm LGUI N &hm LCTRL E &hm LALT I &kp O 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
-          &mt LSHFT Z  &kp X      &kp C      &td_vt    &hm LBRC B     &hm LT K    &kp H    &kp COMMA   &kp DOT   &kp FSLH
+          &mt LSHFT Z  &kp X      &kp C      &td_vt    &hm LBRC B     &hm LT K    &kp H    &kp COMMA   &kp DOT    &hmsh RSHFT FSLH 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &td_cursor &lt 1 SPACE    &lt 2 ENTER &lt 3 BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -122,10 +122,10 @@
            &kp CAPS  &kp LC(LS(N0)) &kp LC(LS(N1)) &kp LC(LS(N2))     &none       &kp SLASH  &hm F7 N7  &hm F8 N8  &hm F9 N9  &hm F10 MINUS
         //├──────────┼──────────────┼──────────────┼───────────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │              │              │               │          │   │          │  4       │  5       │  6       │          │
-          &kp LG(Z)   &glog          &ghard         &kp BACKSPACE   &gcheckout    &kp ASTRK  &hm F4 N4  &hm F5 N5  &hm F6 N6  &hm F11 PLUS
+          &kp LG(Z)    &glog          &ghard         &kp BACKSPACE   &gcheckout    &kp ASTRK  &hm F4 N4  &hm F5 N5  &hm F6 N6  &hm F11 PLUS
         //├──────────┼──────────────┼──────────────┼───────────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │              │              │               │          │   │  0       │  1       │  2       │  3       │          │
-            &none       &kp LG(X)      &kp LG(C)      &kp LG(V)    &kp LG(TAB)      &kp N0     &hm F1 N1  &td_2c     &td_3d     &hm F12 EQUAL 
+           &kp LG(A)   &kp LG(X)      &kp LG(C)        &kp LG(V)    &kp LG(TAB)      &kp N0     &hm F1 N1  &td_2c     &td_3d     &hm F12 EQUAL 
         //╰──────────┴──────────────┴──────────────┼───────────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                           &kp RETURN      &trans        &trans     &trans
         //                                               ╰──────────┴──────────╯   ╰──────────┴──────────╯
