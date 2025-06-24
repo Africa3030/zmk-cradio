@@ -104,10 +104,10 @@
     &mt LC(LS(LALT)) Q &hm ESC W  &kp F      &kp P     &kp G           &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  R       │  T       │  D       │   │  M       │  N       │  E       │  I       │ O        │
-            &kp A     &hm LALT S &hm LCTRL R &hm LGUI T  &td_rp        &td_rbck  &hm LGUI N &hm LCTRL E &hm LALT I &hm RSHFT O 
+            &kp A     &hm LALT S &hm LCTRL R &hm LGUI T &hm LPAR D   &hm LBKT M  &hm LGUI N &hm LCTRL E &hm LALT I &hm RSHFT O 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  H       │ , <      │ . >      │ / ?      │
-          &mt LSHFT Z  &kp X      &kp C      &td_vt     &td_rbc        &td_rgt    &kp H    &kp COMMA   &kp DOT   &kp FSLH
+          &mt LSHFT Z  &kp X      &kp C      &td_vt    &hm LBRC B     &hm LT K    &kp H    &kp COMMA   &kp DOT   &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &td_cursor &lt 1 SPACE    &lt 2 ENTER &lt 3 BSPC 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
