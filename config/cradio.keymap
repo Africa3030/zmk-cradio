@@ -18,6 +18,16 @@
             require-prior-idle-ms = <185>; // like quick-tap-ms however it will apply for any non-modifier key pressed before it
             bindings = <&kp>, <&kp>;  // hold, tap
         };
+
+        hmsh: homerow_mod_short {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <135>; // triggers the hold behavior when the tapping-term-ms has expired
+            quick-tap-ms = <120>; // If you press a tapped hold-tap again within quick-tap-ms milliseconds of the first press, it will always trigger the tap behavior.
+            require-prior-idle-ms = <145>; // like quick-tap-ms however it will apply for any non-modifier key pressed before it
+            bindings = <&kp>, <&kp>;  // hold, tap
+        };
     
         td_rp: td_right_paren {
             compatible = "zmk,behavior-tap-dance";
